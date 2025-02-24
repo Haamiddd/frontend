@@ -70,7 +70,7 @@ export default function Header() {
                     variant="dark"
                     bg="dark"
                     expand="lg"
-                    className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light fixed-top"
+                    className="navbar navbar-expand-lg   ftco_navbar ftco-navbar-light fixed-top"
                >
                     <Container fluid>
                          <Navbar.Toggle aria-controls="navbar-dark-example" />

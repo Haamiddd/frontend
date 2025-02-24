@@ -41,8 +41,8 @@ export default function ViewAllOrders() {
       Orders
       </Button>
 
-      <Modal show={show} size="lg" centered>
-        <Modal.Header>
+      <Modal  show={show} size="lg" centered>
+        <Modal.Header className="modal-header-custom">
           <Modal.Title id="contained-modal-title-vcenter">View All Orders</Modal.Title>
         </Modal.Header>
 

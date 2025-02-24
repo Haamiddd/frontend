@@ -10,16 +10,16 @@ export default function Footer() {
 
                 <div class="col-md-4 text-center">
                     <br /><br /><br />
-                    <h3>@PillTrack 2023</h3>
+                    <h3>@Pharma Connect 2025</h3>
                     <h5 style={{ color: "yellow" }}><i>Greatness starts here</i></h5>
                 </div>
                 <div class="col-md-4">
                     <div class="container-fluid">
                         <br />
                         <p class="text-center" style={{ fontSize: "25px" }}>Need help? | (+94) 77 123 1234 </p>
-                        <h6 class="text-center">pilltrack@gmail.com</h6>
+                        <h6 class="text-center">pharmaconnect@gmail.com</h6>
                         <h6 class="text-center">0352345678</h6>
-                        <h6 class="text-center">A25, Kandy Road, Mawanella</h6>
+                        <h6 class="text-center">Gampola</h6>
 
 
                     </div>

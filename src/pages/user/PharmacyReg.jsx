@@ -1,9 +1,5 @@
-import React from "react";
-import { useState } from "react";
-import { useContext, useRef } from "react";
-// import { Context } from "../context/Context";
+import React, { useState } from "react";
 import axios from "axios";
-// import "../style.css"
 import Swal from "sweetalert2";
 
 export default function PharmacyReg() {
@@ -12,7 +8,7 @@ export default function PharmacyReg() {
   const [address, setAddress] = useState("");
   const [town, setTown] = useState("");
   const [contact, setContact] = useState("");
-  const [logo, setLogo] = useState(""); // Store the image URL here
+  const [logo, setLogo] = useState("");
   const [opentime, setOpentime] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -24,13 +20,8 @@ export default function PharmacyReg() {
       const file = e.target.files[0];
 
       if (!file) return alert("File does not exist.");
-
-      if (file.size > 1024 * 1024)
-        // 1MB
-        return alert("Size is too large!");
-
-      if (file.type !== "image/jpeg" && file.type !== "image/png")
-        return alert("File format is incorrect.");
+      if (file.size > 1024 * 1024) return alert("Size is too large!");
+      if (file.type !== "image/jpeg" && file.type !== "image/png") return alert("File format is incorrect.");
 
       let formData = new FormData();
       formData.append("file", file);
@@ -40,22 +31,14 @@ export default function PharmacyReg() {
       const res = await axios.post(
         "https://api.cloudinary.com/v1_1/dswsu55n9/image/upload",
         formData,
-        {
-          method: "post",
-          body: formData,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        { headers: { "Content-Type": "multipart/form-data" } }
       );
 
-      console.log(res.data.url);
-      setLogo(res.data.url); // Set the image URL in the state
+      setLogo(res.data.url);
       setIsLoading(false);
     } catch (err) {
-      console.log(err.response.data.msg);
+      console.log(err.response?.data?.msg || "Not uploaded");
       setIsLoading(false);
-      console.log("Not uploaded");
     }
   };
 
@@ -63,14 +46,9 @@ export default function PharmacyReg() {
     e.preventDefault();
 
     if (
-      name.length === 0 ||
-      email.length === 0 ||
-      address.length === 0 ||
-      town.length === 0 ||
-      contact.length === 0 ||
-      logo.length === 0 ||
-      opentime.length === 0 ||
-      password.length === 0
+      name.length === 0 || email.length === 0 || address.length === 0 ||
+      town.length === 0 || contact.length === 0 || logo.length === 0 ||
+      opentime.length === 0 || password.length === 0
     ) {
       Swal.fire({
         title: "Fields Cannot be empty!",
@@ -79,28 +57,12 @@ export default function PharmacyReg() {
         confirmButtonText: "Ok",
       });
     } else {
-      const pharmData = {
-        name,
-        email,
-        address,
-        town,
-        contact,
-        logo, // Include the logo URL
-        opentime,
-        password,
-      };
+      const pharmData = { name, email, address, town, contact, logo, opentime, password };
 
-      axios
-        .post(`http://localhost:3000/api/pharmacy/addpharmacy`, pharmData)
-        .then(function (res) {
-          setname("");
-          setEmail("");
-          setAddress("");
-          setTown("");
-          setContact("");
-          setLogo("");
-          setOpentime("");
-          setPassword("");
+      axios.post(`http://localhost:3000/api/pharmacy/addpharmacy`, pharmData)
+        .then(() => {
+          setname(""); setEmail(""); setAddress(""); setTown("");
+          setContact(""); setLogo(""); setOpentime(""); setPassword("");
           Swal.fire({
             title: "Success!",
             text: "Successfully registered as a Pharmacist",
@@ -108,12 +70,11 @@ export default function PharmacyReg() {
             confirmButtonText: "Ok",
           }).then((result) => {
             if (result.isConfirmed) {
-              window.location.href = '/Pharmlogin';
+              window.location.href = "/Pharmlogin";
             }
           });
         })
-        .catch(function (error) {
-          console.log(error);
+        .catch(() => {
           Swal.fire({
             title: "Failed!",
             text: "Registering Unsuccessful",
@@ -125,139 +86,74 @@ export default function PharmacyReg() {
   };
 
   return (
-    <div>
-      <div class="container-fluid">
-        <div class="row bg-image login-image">
-          <div class=" row bg-trans-yellow">
-            <div class="col-md-8 ">
-              <div class="pic-body">
-                <br />
-                <br />
-                <a href="/" className="btn btn-def me-1" style={{ fontSize: "20px", textDecoration: "none" }}>Home</a>
-                <a href="/Pharmlogin" className="btn btn-def" style={{ fontSize: "20px", textDecoration: "none" }}>Login as a Pharmacist</a>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <div class="topic">
-                  Switch to a simpler <span class="blue"> pharmacy </span> today
-                </div>
-              </div>
-            </div>
+    <div className="container-fluid d-flex flex-column min-vh-100">
+      {/* Top navigation bar */}
+      <div className="d-flex justify-content-between p-3">
+        <a href="/" className="btn btn-def" style={{ fontSize: "20px", textDecoration: "none" }}>Home</a>
+        <a href="/Pharmlogin" className="btn btn-def" style={{ fontSize: "20px", textDecoration: "none" }}>Login as a Pharmacist</a>
+      </div>
 
-            <div class="col-md-4 login-sec">
-              <div style={{ height: "11vh" }}> </div>
-              <div class="card login-card" style={{ height: "130vh" }}>
-                <span class=" card-body">
-                  <br />
-                  <span class=" card-title">Pharmacy Register</span>
-                  <br />
-                  <br />
-                  <span class="card-text">
-                    <form className="loginForm" onSubmit={handleSubmit}>
-                      <div class="form group">
-                        <label for=""> Name </label>
-                        <input
-                          type="username"
-                          class="form-control"
-                          placeholder="Enter your name"
-                          onChange={(e) => {
-                            setname(e.target.value);
-                          }}
-                        />
-                      </div>
-                      <div class="form group">
-                        <label for=""> Email Address </label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="Enter your email"
-                          onChange={(e) => {
-                            setEmail(e.target.value);
-                          }}
-                        />
-                      </div>
-                      <div class="form group">
-                        <label for=""> Address </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Enter your Address"
-                          onChange={(e) => {
-                            setAddress(e.target.value);
-                          }}
-                        />
-                      </div>
-                      <div class="form group">
-                        <label for=""> Town </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Enter your Company Name"
-                          onChange={(e) => {
-                            setTown(e.target.value);
-                          }}
-                        />
-                      </div>
-                      <div class="form group">
-                        <label for=""> Contact </label>
-                        <input
-                          type="tel"
-                          class="form-control"
-                          placeholder="Enter your Contact"
-                          onChange={(e) => {
-                            setContact(e.target.value);
-                          }}
-                        />
-                      </div>
-                      <div class="form group">
-                        <label for=""> Logo </label>
-                        <input
-                          accept="image/*"
-                          id="images-input"
-                          multiple
-                          type="file"
-                          onChange={handleImageChange}
-                        />
-                      </div>
-                      <div class="form group">
-                        <label for=""> Opening Time</label>
-                        <input
-                          type="time"
-                          class="form-control"
-                          placeholder="Enter your Company Name"
-                          onChange={(e) => {
-                            setOpentime(e.target.value);
-                          }}
-                        />
-                      </div>
-                      <div class="form group">
-                        <label for=""> Password </label>
-                        <input
-                          type="password"
-                          class="form-control"
-                          placeholder="Enter your password"
-                          onChange={(e) => {
-                            setPassword(e.target.value);
-                          }}
-                        />
-                      </div>
-                      {/* <a href=""> Forgot Password</a> */}
-                      <br /> <br />
-                      <input
-                        type="submit"
-                        value="Register"
-                        class="btn btn-curved"
-                        role="button"
-                        style={{ width: "100%" }}
-                      />
-                    </form>
-                  </span>
-                </span>
-              </div>
+      {/* Centered Form */}
+      <div className="d-flex justify-content-center align-items-center flex-grow-1">
+        <div className="col-md-6">
+          <div className="card login-card p-4">
+            <div className="card-body">
+              <h3 className="text-center mb-4">Pharmacy Register</h3>
+              <form className="loginForm" onSubmit={handleSubmit}>
+                
+                {/* Two-column layout with spacing */}
+                <div className="row">
+                  <div className="col-md-6 ">
+                    <div className="form-group m-1">
+                      <label>Name</label>
+                      <input type="text" className="form-control" placeholder="Enter your name"
+                        value={name} onChange={(e) => setname(e.target.value)} />
+                    </div>
+                    <div className="form-group m-1">
+                      <label>Address</label>
+                      <input type="text" className="form-control" placeholder="Enter your Address"
+                        value={address} onChange={(e) => setAddress(e.target.value)} />
+                    </div>
+                    <div className="form-group m-1">
+                      <label>Contact</label>
+                      <input type="tel" className="form-control" placeholder="Enter your Contact"
+                        value={contact} onChange={(e) => setContact(e.target.value)} />
+                    </div>
+                    <div className="form-group m-1">
+                      <label>Logo</label>
+                      <input type="file" accept="image/*" className="form-control"
+                        onChange={handleImageChange} />
+                    </div>
+                  </div>
+
+                  <div className="col-md-6 ">
+                    <div className="form-group m-1">
+                      <label>Email Address</label>
+                      <input type="email" className="form-control" placeholder="Enter your email"
+                        value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </div>
+                    <div className="form-group m-1">
+                      <label>Town</label>
+                      <input type="text" className="form-control" placeholder="Enter your Town"
+                        value={town} onChange={(e) => setTown(e.target.value)} />
+                    </div>
+                    <div className="form-group m-1">
+                      <label>Opening Time</label>
+                      <input type="time" className="form-control"
+                        value={opentime} onChange={(e) => setOpentime(e.target.value)} />
+                    </div>
+                    <div className="form-group pt-2 m-1">
+                      <label>Password</label>
+                      <input type="password" className="form-control" placeholder="Enter your password"
+                        value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                  </div>
+                </div>
+
+                <br />
+                 <a href="/register">Register As Customer </a>
+                <input type="submit" value="Register" className="btn btn-curved w-100 my-2" />
+              </form>
             </div>
           </div>
         </div>

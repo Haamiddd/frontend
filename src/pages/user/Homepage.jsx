@@ -51,12 +51,7 @@ export default function Homepage() {
                     {/* <div className="container"> */}
                     <div className="hpimage" data-setbg="images">
                          <div className="row">
-                              <div className="col-6" style={{ padding: '45px' }}>
-                                   <br /><br />
-                                   <span className="topic">
-                                        No more sorting meds, waiting in line, or chasing down refills for <span className="blue" style={{ fontSize: '150px' }}> efficiency</span>
-                                   </span>
-                              </div>
+                              
                               <div className="col-6" style={{ padding: '45px' }}>
                                    <br /><br />
                                    <div className="container" style={{ padding: '10px' }}>
@@ -80,6 +75,12 @@ export default function Homepage() {
                                         </ul>
                                    </div>
                               </div>
+                              <div className="col-6" style={{ padding: '45px' }}>
+                                   <br /><br />
+                                   <span className="topic">
+                                   No lines, no hassle, just fast, easy meds! <br /> <span className="blue" style={{ fontSize: '120px' }}> Seamless </span> 
+                                   </span>
+                              </div>
                          </div>
                     </div>
 
@@ -88,13 +89,14 @@ export default function Homepage() {
                          <br /><br />
                          <div className="container pt-3">
                               <div className="row align-items-center">
+                              <div className="col-sm-6 text-center">
+                                        <img alt="image" className="img-fluid img-side" src={pin} style={{ width: '400px' }} />
+                                   </div>
                                    <div className="col-sm-6 side">
                                         <h1>Home delivery</h1>
                                         <p className="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                    </div>
-                                   <div className="col-sm-6 text-center">
-                                        <img alt="image" className="img-fluid img-side" src={pin} style={{ width: '400px' }} />
-                                   </div>
+                                   
                               </div>
                          </div>
                     </section>
@@ -206,10 +208,12 @@ export default function Homepage() {
                               position: 'fixed',
                               bottom: '20px',
                               right: '70px',
-                              background: 'yellow',
-                              color: 'black',
+                              background: '#3a4a5a',
+                              borderColor:'white',
+                              border:'2px',
+                              color: 'white',
                               fontSize: '22px',
-                              borderRadius: '2rem',
+                              borderRadius: '3px',
                               padding: '10px',
                               textAlign: 'center',
                               cursor: 'pointer',
@@ -223,13 +227,13 @@ export default function Homepage() {
                          onClick={scrollToTop}
                          style={{
                               position: 'fixed',
-                              bottom: '20px',
-                              right: '20px',
-                              background: 'yellow',
-                              color: 'black',
+                              bottom: '18x',
+                              right: '18px',
+                              background: '#3a4a5a',
+                              color: 'white',
                               fontSize: '22px',
-                              borderRadius: '3rem',
-                              padding: '10px',
+                              borderRadius: '3px',
+                              padding: '9px',
                               textAlign: 'center',
                               cursor: 'pointer',
                          }}

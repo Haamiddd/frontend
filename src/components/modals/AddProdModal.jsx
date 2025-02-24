@@ -137,7 +137,7 @@ export default function AddProdModal() {
       </Button>
 
       <Modal show={show} size="lg" centered>
-        <Modal.Header>
+      <Modal.Header className="modal-header-custom">
           <Modal.Title id="contained-modal-title-vcenter">Add Product</Modal.Title>
         </Modal.Header>
 

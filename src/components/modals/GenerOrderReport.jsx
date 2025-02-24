@@ -64,7 +64,7 @@ export default function GenerOrderReport() {
                </Button>
 
                <Modal show={show} size="lg" centered>
-                    <Modal.Header>
+               <Modal.Header className="modal-header-custom">
                          <Modal.Title id="contained-modal-title-vcenter">
                               Generate Order Report
                          </Modal.Title>

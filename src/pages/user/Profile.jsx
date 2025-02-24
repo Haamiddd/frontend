@@ -78,16 +78,16 @@ export default function Profile() {
 
 
      return (
-          <div>
+          <div style={{ backgroundColor: "#8eafd3"}}>
                <Header />
                <br />
                <br /><br /><br />
                <h2 className="text-center">User Profile</h2>
                <br />
-               <section style={{ backgroundColor: "#e0ffe0", borderRadius: "16px" }}>
-                    <MDBContainer className="py-5" style={{ fontSize: '20px', borderRadius: "16px" }}>
+               <section >
+                    <MDBContainer className="py-2" style={{  fontSize: '20px', borderRadius: "16px" }}>
                          <MDBRow>
-                              <MDBCard className="mb-4">
+                              <MDBCard className="mb-4" style={{color:'black'}}>
                                    <MDBCardBody>
                                         <MDBRow>
                                              <MDBCol sm="3">

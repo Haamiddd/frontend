@@ -149,69 +149,69 @@ export default function Prescription() {
 
 
 
-     return (
+     return ( 
+          <div style={{ backgroundColor: "#8eafd3" }}>
+                <Header />
           <div>
-               <Header />
-               <div className="prescription-form-container">
+               
+              
+               <div className="prescription-form-container" >
                     <h2>Prescription Form</h2>
                     <div className="form-columns">
                          <div className="form-column">
-                              <form className="prescription-form" onSubmit={handleSubmit}>
-                                   {/* Left Column */}
-                                   <div className="form-group">
-                                        <label htmlFor="patientName">Patient Name:</label>
-                                        <input type="text" id="patientName" name="patientName" onChange={(e) => { setPatientname(e.target.value); }} />
-                                   </div>
-                                   {/* <div className="form-group">
-                                        <label htmlFor="email">Email:</label>
-                                        <input type="email" id="email" name="email" onChange={(e) => {setEmail(e.target.value);}}/>
-                                   </div> */}
-                                   <div className="form-group">
-                                        <label htmlFor="age">Age:</label>
-                                        <input type="number" id="age" name="age" onChange={(e) => { setAge(e.target.value); }} />
-                                   </div>
-                                   <div className="form-group">
-                                        <label htmlFor="yourPhone">Your Phone:</label>
-                                        <input type="tel" id="yourPhone" name="yourPhone" onChange={(e) => { setYourphone(e.target.value); }} />
-                                   </div>
-                                   <div className="form-group">
-                                        <label htmlFor="address">Address:</label>
-                                        <input type="text" id="address" name="address" onChange={(e) => { setAddress(e.target.value); }} />
-                                   </div>
-                                   <div className="form-group">
-                                        <label htmlFor="deliveryLocation">Choose Pharmacy:</label>
-                                        <select id="deliveryLocation" name="deliveryLocation" value={choosepharmacy} onChange={(e) => { setChoosepharmacy(e.target.value); }}>
-                                             <option value="" disabled>Select Pharmacy</option>
-                                             {pharmacy.map((pm) => (
-                                                  <option key={pm._id} value={pm._id}>{pm.name}</option>
-                                             ))}
-                                        </select>
-                                   </div>
-                                   <div className="form-group">
-                                        <label>Gender:</label>
-                                        <div className="radio-group">
-                                             <input type="radio" id="male" name="gender" value="male" checked={gender === 'male'} onChange={() => setGender('male')} />
-                                             <label htmlFor="male">Male</label>
-                                             <input type="radio" id="female" name="gender" value="female" checked={gender === 'female'} onChange={() => setGender('female')} />
-                                             <label htmlFor="female">Female</label>
-                                        </div>
-                                   </div>
-                                   <div className="form-group">
-                                        <label htmlFor="allergyNote">Do you have any Allergies? (Yes/No. If Yes, mention in detail):</label>
-                                        <textarea id="allergyNote" name="allergyNote" onChange={(e) => setAllergy(e.target.value)}></textarea>
-                                   </div>
-
-                                   <div className="form-group">
-                                        <label htmlFor="prescriptionFile">Attach your prescription (PDF, JPG, PNG):</label>
-                                        <input type="file" id="prescriptionFile" name="prescriptionFile" accept=".pdf,.jpg,.png" onChange={handleImageChange} />
-                                   </div>
-                                   <div className="form-group">
-                                        <label>Only Home Delivery available for Prescriptions</label>
-                                   </div>
-                                   <div className="form-group">
-                                        <button type="submit">Submit</button>
-                                   </div>
-                              </form>
+                         <form className="prescription-form" onSubmit={handleSubmit}>
+                    <div className="form-columns">
+                        <div className="form-column">
+                            <div className="form-group">
+                                <label>Patient Name:</label>
+                                <input type="text" onChange={(e) => setPatientname(e.target.value)} />
+                            </div>
+                            <div className="form-group">
+                                <label>Age:</label>
+                                <input type="number" onChange={(e) => setAge(e.target.value)} />
+                            </div>
+                            <div className="form-group">
+                                <label>Your Phone:</label>
+                                <input type="tel" onChange={(e) => setYourphone(e.target.value)} />
+                            </div>
+                            <div className="form-group">
+                                <label>Address:</label>
+                                <input type="text" onChange={(e) => setAddress(e.target.value)} />
+                            </div>
+                        </div>
+                        <div className="form-column">
+                            <div className="form-group">
+                                <label>Choose Pharmacy:</label>
+                                <select value={choosepharmacy} onChange={(e) => setChoosepharmacy(e.target.value)}>
+                                    <option value="" disabled>Select Pharmacy</option>
+                                    {pharmacy.map((pm) => (
+                                        <option key={pm._id} value={pm._id}>{pm.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label>Gender:</label>
+                                <div className="radio-group">
+                                    <input type="radio" id="male" name="gender" value="male" checked={gender === 'male'} onChange={() => setGender('male')} />
+                                    <label htmlFor="male">Male</label>
+                                    <input type="radio" id="female" name="gender" value="female" checked={gender === 'female'} onChange={() => setGender('female')} />
+                                    <label htmlFor="female">Female</label>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label>Do you have any Allergies?</label>
+                                <textarea onChange={(e) => setAllergy(e.target.value)}></textarea>
+                            </div>
+                            <div className="form-group">
+                                <label>Attach your prescription:</label>
+                                <input type="file" accept=".pdf,.jpg,.png" onChange={handleImageChange} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="form-group submit-container">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
                          </div>
                     </div>
                </div>
@@ -219,6 +219,6 @@ export default function Prescription() {
                     <Footer />
                </div>
           </div>
-
+          </div>
      )
 }

@@ -133,7 +133,7 @@ export default function UpdatePharmModal(props) {
       </Button>
 
       <Modal show={show} size="lg" centered>
-        <Modal.Header>
+      <Modal.Header className="modal-header-custom">
           <Modal.Title id="contained-modal-title-vcenter">
             Update Pharmacy
           </Modal.Title>

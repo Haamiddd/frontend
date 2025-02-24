@@ -59,7 +59,7 @@ export default function GeneratProReport() {
       </Button>
 
       <Modal show={show} size="lg" centered>
-        <Modal.Header>
+      <Modal.Header className="modal-header-custom">
           <Modal.Title id="contained-modal-title-vcenter">
             Generate Product Report
           </Modal.Title>

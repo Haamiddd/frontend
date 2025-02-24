@@ -41,7 +41,7 @@ export default function ProdView() {
      );
 
      return (
-          <div style={{ backgroundColor: '#f0f0f0' }}>
+          <div style={{ backgroundColor: '#8eafd3' }}>
                <Header />
                <div>
                     <Header />
@@ -54,7 +54,7 @@ export default function ProdView() {
                                    placeholder="Search by product name"
                                    value={searchTerm}
                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                   style={{ width: '50%', borderRadius: '20px', borderColor:'blue' }} // Adjust the width as needed
+                                   style={{ width: '70%', borderRadius: '5px' }} // Adjust the width as needed
                               />
                          </div>
                          <MDBRow className="prod-row mt-2">

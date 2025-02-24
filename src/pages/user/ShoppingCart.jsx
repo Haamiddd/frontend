@@ -141,14 +141,14 @@ export default function ShoppingCart() {
     <div>
       <Header />
       <br />
-      <section className="h-100 h-custom" style={{ backgroundColor: "#eee" }}>
+      <section className="h-100 h-custom" style={{ backgroundColor: "#8eafd3" }}>
         <MDBContainer className="py-5 h-100">
           <MDBRow className="justify-content-center align-items-center h-100">
             <MDBCol>
               <MDBCard style={{ borderRadius: "19px" }}>
-                <MDBCardBody className="p-4">
+                <MDBCardBody className="p-4" style={{ backgroundColor: "#8eafd3" }}>
                   <MDBRow>
-                    <MDBCol lg="7" className="px-5 py-4">
+                    <MDBCol lg="7" className="px-5 py-4" style={{ backgroundColor: "#3a4a5a", }}>
                       <MDBTypography
                         tag="h3"
                         className="mb-5 pt-2 text-center fw-bold text-uppercase"
@@ -235,7 +235,7 @@ export default function ShoppingCart() {
                     <MDBCol
                       lg="5"
                       className="px-5 py-4"
-                      style={{ backgroundColor: "#eee", borderRadius: "15px" }}
+                      style={{ backgroundColor: "#3a4a5a",color: "white", borderRadius: "0px" }}
                     >
                       <MDBTypography
                         tag="h3"
