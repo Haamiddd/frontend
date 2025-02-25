@@ -107,26 +107,24 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <div>
+    <div style={{backgroundColor:''}}>
       <Sidenav />
-      <div className="row">
-        <div className="col-md-3"></div>
-        <div className="col-md-8">
+      <div className="row px-2" style={{backgroundColor:'',}}>
+        <div className="col-md-12">
           <main className="main-container">
-            <h2 className="text-center">Admin Dashboard</h2>
-            <br />
+            <h5 className="text-center">Admin Dashboard</h5>
             <div className="main-cards">
               <div className="cards">
                 <i className="bx"><GrNotes /></i>
                 <span>
-                  <h3>Products</h3>
+                  <h5>Products</h5>
                   <p>{productCount}</p>
                 </span>  
               </div>
               <div className="cards">
                 <i className="bx"><AiOutlineShoppingCart /></i>
                 <span>
-                  <h3>Orders</h3>
+                  <h5>Orders</h5>
                   <p>{orderCount}</p>
                 </span>
                   
@@ -134,7 +132,7 @@ export default function AdminDashboard() {
               <div className="cards">
                 <i className="bx"><BsPrescription2 /></i>
                   <span>
-                    <h3>Prescriptions</h3>
+                    <h5>Prescriptions</h5>
                     <p>{prescriptionCount}</p>
                   </span>
               </div>

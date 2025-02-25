@@ -10,7 +10,7 @@
 
 .hpimage {
     /* background-image: url(./images/back.jpg); 8eafd3 */
-    background-color: #3a4a5a;
+    background-color: #8eafd3;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -220,18 +220,18 @@ button:hover {
 .cards{
     display: flex;
     background: var(--light);
-    padding: 20px;
-    border-radius: 20px;
+    padding: 8px;
+    border-radius: 10px;
     align-items: center;
-    grid-gap: 24px;
+    grid-gap: 14px;
 }
 
 .cards .bx {
     width: 80px;
-    height: 80px;
+    height: 15px;
     border-radius: 10px;
     background: var(--grey);
-    font-size: 36px;
+    font-size: 26px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,7 +242,7 @@ button:hover {
     font-weight: bold;
 }
 .cards span p{
-    font-size: 36px;
+    font-size: 26px;
 }
 
 .cards:first-child{
@@ -481,30 +481,7 @@ li {
     font-family: 'Poppins', sans-serif;
     line-height: 35px;
 }
-
-.nav-item {
-    text-transform: uppercase;
-    padding-left: 30px;
-    margin-right: 30px;
-    font-size: 18px;
-}
-
-.nav-item {
-    width: auto;
-}
-
-.nav-link:hover {
-    transition: 0.3s;
-    border-bottom: 2px solid #f1ee05;
-    color: #f4e664 !important;
-}
-
-.dash-link:hover {
-    transition: 0.3s !important;
-    color: #f4e664 !important;
-    border-bottom: none;
-}
-
+ 
 .homepage-container {
     display: flex;
     /* Use Flexbox to align items horizontally */
@@ -520,16 +497,16 @@ li {
 /* colors */
 
 :root {
-    --primary1: rgba(251, 212, 0, 1);
+    --primary1: 8eafd3(251, 212, 0, 1);
     --primary2: rgb(14, 12, 1);
 }
 
 .yellow {
-    color: rgba(251, 212, 0, 1);
+    color: 8eafd3(251, 212, 0, 1);
 }
 
 .primary {
-    color: rgba(251, 212, 0, 1);
+    color: 8eafd3(251, 212, 0, 1);
 }
 
 .white {
@@ -775,7 +752,7 @@ li {
 
 .btn-def {
     color: #000000;
-    background-color: #8eafd3;
+    background-color: #4a5c70;
     padding: 10px 25px;
     text-align: center;
     font: 'Raleway', sans-serif;
@@ -787,14 +764,14 @@ li {
 
 .btn-dash {
     color: rgb(241, 236, 236);
-    background-color: var(--primary2);
-    padding: 10px 20px;
+    background-color: #8eafd3;
+    
     text-align: center;
     border: none;
     font: 'Raleway', sans-serif;
     font-size: 16px;
     transition-duration: 0.1s;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .btn-dash:hover {
@@ -811,7 +788,7 @@ li {
     font: 'Raleway', sans-serif;
     font-size: 16px;
     transition-duration: 0.1s;
-    border-radius: 40px;
+    border-radius: 5px;
     
 }
 
@@ -851,6 +828,7 @@ li {
     border-radius: 0;
     border: 1px solid black;
 }
+
 
 .btn-out:hover {
     color: rgb(161, 160, 160);
@@ -1088,13 +1066,7 @@ li {
     }
 }
 
-.navbar-vertical.navbar-light {
-    border-color: rgba(0, 0, 0, .05);
-    background-color: #f6f9fc;
-    z-index: 5;
-    border-style: solid;
-    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15);
-}
+
 
 @media (min-width: 992px) {
     .navbar-vertical.navbar-expand-lg {
@@ -1123,7 +1095,8 @@ li {
         align-items: stretch;
     }
 
-    .navbar-vertical .dash-link {
+
+    .navbar-vertical c {
         width: 100%;
         margin-top: 0px;
     }
@@ -1162,6 +1135,86 @@ li {
         transition: none;
     }
 }
+
+
+
+/* Top Navbar */
+.top-navbar {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-logo {
+    width: 150px;
+    height: 50px;
+    padding-left: 0%;
+  }
+  
+  /* Navigation Links */
+  .navbar-nav {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #e94560;
+    transform: scale(1.05);
+  }
+  
+  /* Right-Side Icons */
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #8eafd3;
+  }
+  
+  .logout-btn {
+    display: flex;
+    align-items: center;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: #d63447;
+  }
+  
+  /* Main Content */
+  .content {
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .welcome {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a2e;
+  }
+  
 
 
 /*dashboard -  main content */

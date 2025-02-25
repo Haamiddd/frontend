@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, NavDropdown, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import axios from "axios";
 import logo from "../../images/logo.png";
-// import "../../style.css"
-import { FaUser } from "react-icons/fa";
-import { FaBell } from "react-icons/fa";
+import { FaUser, FaBell, FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import { FiSettings } from "react-icons/fi";
 import { MdInventory2 } from "react-icons/md";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { FaHome } from "react-icons/fa";
 import { BsPrescription2 } from "react-icons/bs";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import "../../style.css"; // Add your custom styles
 
 export default function SidenavAd() {
-
   const [pharmacy, setPharmacy] = useState({});
-
   const pharmacyId = localStorage.getItem("pharmacyId");
 
   useEffect(() => {
@@ -30,95 +25,59 @@ export default function SidenavAd() {
       });
   }, []);
 
-
   const handleLogout = () => {
-    // Remove the pharmacyId from local storage
     localStorage.removeItem("pharmacyId");
-
-    // Show a success Swal notification
     Swal.fire({
-      icon: 'success',
-      title: 'Logout Successful',
-      text: 'You have been successfully logged out.',
+      icon: "success",
+      title: "Logout Successful",
+      text: "You have been successfully logged out.",
     }).then(() => {
-      // Redirect the user to the login or home page
       window.location.href = "/Pharmlogin";
     });
   };
 
   return (
     <div>
-      <Navbar
-        variant="dark"
-        bg="dark"
-        expand="lg"
-        className="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-dark bg-dark navbar-expand-lg"
-      >
-        <Navbar.Toggle aria-controls="navbar-dark-example" />
-        <div className="text-center">
-          <a className="brand" href="/Admindashboard">
-            <img
-              src={logo}
-              style={{ width: "150px", height: "50px" }}
-              alt="image"
-            />
-          </a>
-          <br />
-          <br />
-        </div>
-        <Container fluid>
-          <Navbar.Collapse id="navbar-dark-example">
-            <div className="navbar-collapse row m-auto ">
-              <div className="navbar-nav col-md-10">
-                <a
-                  href="/Admindashboard"
-                  className="nav-item nav-link dash-link active bg-secondary"
-                >
-                  <FaHome /> Admin Dashboard{" "}
-                </a>
-                <a
-                  href="/Productdashboard"
-                  className="nav-item nav-link dash-link"
-                >
-                  <MdInventory2 /> Product Dashboard{" "}
-                </a>
-                <a href="/OrderManagement" className="nav-item nav-link dash-link">
-                  <AiOutlineShoppingCart /> Order Management{" "}
-                </a>
-                <a href="/PrescriptionManagement" className="nav-item nav-link dash-link">
-                  <BsPrescription2 /> Prescription Management{" "}
-                </a>
-                <a href="/Profilead" className="nav-item dash-link nav-link ">
-                  {" "}
-                  <CgProfile /> Profile
-                </a>
-              </div>
-            </div>
-          </Navbar.Collapse>
+      {/* Top Navbar */}
+      <Navbar className="top-navbar">
+        <Container>
+          {/* Logo */}
+          <Navbar.Brand href="/Admindashboard">
+            <img src={logo} className="nav-logo" alt="logo" />
+          </Navbar.Brand>
+
+          {/* Navigation Links */}
+          <Nav className="ml-auto">
+            <Nav.Link href="/Admindashboard">
+              <FaHome /> Dashboard
+            </Nav.Link>
+            <Nav.Link href="/Productdashboard">
+              <MdInventory2 /> Products
+            </Nav.Link>
+            <Nav.Link href="/OrderManagement">
+              <AiOutlineShoppingCart /> Orders
+            </Nav.Link>
+            <Nav.Link href="/PrescriptionManagement">
+              <BsPrescription2 /> Prescriptions
+            </Nav.Link>
+            <Nav.Link href="/Profilead">
+              <CgProfile /> Profile
+            </Nav.Link>
+          </Nav>
+
+          {/* Right Side Icons */}
+          <div className="nav-icons">
+            <FaBell className="icon" />
+            <button className="logout-btn" onClick={handleLogout}>
+              <FaUser /> Log out
+            </button>
+          </div>
         </Container>
       </Navbar>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-3">
-            {/* <h1 className="fredoka"> Hello Jhon ! </h1> */}
-          </div>
-          <div className="col-md-7">
-            <br />
-            <h1 className="fredoka"> Hello {pharmacy.name} ! </h1>
-          </div>
-          <div className="col-md-2 ">
-            <br />
-            <FaBell />
-            &nbsp;
-            <a
-              href="#"
-              className="btn btn-dash d-inline"
-              onClick={handleLogout}
-            >
-              <FaUser /> <span style={{ color: "white" }}>Log out</span>
-            </a>
-          </div>
-        </div>
+
+      {/* Content Area */}
+      <div className="content">
+        <h1 className="welcome">Hello {pharmacy.name}!</h1>
       </div>
     </div>
   );

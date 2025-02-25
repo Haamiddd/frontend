@@ -75,13 +75,10 @@ export default function ProductDashBoard() {
      return (
           <div>
                <Sidenav />
-               <br />
                <div className="row">
-                    <div className="col-md-3"></div>
-                    <div className="col-md-8">
+                    <div className="col-md-12 px-5">
                          <h2 className='text-center'>Product Dashboard</h2>
-                         <br />
-                         <div className='text-center'><AddProdModal /></div>
+                         <div className='text-center'><AddProdModal /></div> 
                          <br />
                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                               <div className="text-center" style={{ width: '50%' }}>

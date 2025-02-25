@@ -76,13 +76,11 @@ export default function ProfileAd() {
   return (
     <div>
       <SidenavAd />
-      <br />
-      <br />
-      <div className="row">
-        <div className="col-md-3"></div>
-        <div className="col-md-8">
+    
+      <div className="row px-5">
+        <div className="col-md-12">
           <h2 className="text-center">Pharmacy Profile</h2>
-          <br />
+          
           <section style={{ backgroundColor: "#e0ffe0", borderRadius: "16px" }}>
             <MDBContainer className="py-5" style={{ fontSize: '20px', borderRadius: "16px" }}>
               <MDBRow>

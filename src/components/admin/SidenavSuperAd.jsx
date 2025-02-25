@@ -48,7 +48,7 @@ export default function SidenavSuperAd() {
           <div>
                <Navbar
                     variant="dark"
-                    bg="dark"
+                    
                     expand="lg"
                     className="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-dark bg-dark navbar-expand-lg"
                >

@@ -71,13 +71,10 @@ export default function PrescriptionManagement() {
   return (
     <div>
       <Sidenav/>
-      <br />
-      <br />
-      <div className="row">
-        <div className="col-md-3"></div>
-        <div className="col-md-8">
+      
+      <div className="row px-5">
+        <div className="col-md-12">
           <h2 className="text-center">Prescription Dashboard</h2>
-          <br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div className="text-center" style={{ width: '50%' }}>
             <input type="text"

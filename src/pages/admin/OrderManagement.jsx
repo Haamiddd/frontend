@@ -124,11 +124,10 @@ export default function OrderManagement() {
   return (
     <div>
       <SidenavAd />
-      <br />
-      <br />
-      <div className="row">
-        <div className="col-md-3"></div>
-        <div className="col-md-8">
+      
+      <div className="row px-5">
+        
+        <div className="col-md-12">
           <h2 className="text-center">Order Dashboard</h2>
           <br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -141,7 +140,7 @@ export default function OrderManagement() {
               />
             </div>
             <div><GenerOrderReport /></div>
-            <div className="text-center" style={{background:"black", color:"yellow", padding:"12px", borderRadius:"15px", paddingBottom:"0px"}}>
+            <div className="text-center" style={{background:"black", color:"white", padding:"12px", borderRadius:"5px", paddingBottom:"0px"}}>
               <h4 style={{ fontWeight:"bold"}}>Total Sales: {totalSales}</h4>
             </div>
           </div>
