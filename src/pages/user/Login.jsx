@@ -62,7 +62,7 @@ export default function Login() {
                     <div className="col-md-4">
                          <div className="card login-card">
                               <div className="card-body">
-                                   <h3 className="card-title">Log In</h3>
+                                   <h3 className="card-title" style={{color:'black'}}>Log In</h3>
                                    <form className="loginForm" onSubmit={handleLogin}>
                                         <div className="form-group">
                                              <label>Email</label>

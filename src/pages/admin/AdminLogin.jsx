@@ -60,7 +60,7 @@ export default function AdminLogin() {
      };
 
   return (
-       <div>
+       <div className='loginIn'>
             <div className="container-fluid">
                  <div className="row bg-image login-image">
                       <div className="row bg-trans-yellow">

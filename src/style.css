@@ -8,7 +8,7 @@
 }
     /* background-image: url(./images/back.jpg); 8eafd3 */
     .loginIn {
-        background-image: url(./images/loginBg.jpg);
+        background-image: url(./images/bg1.jpg);
         background-size: cover; /* Ensures the image covers the entire element */
         background-position: center; /* Centers the image */
         background-repeat: no-repeat; /* Prevents image repetition */
@@ -17,7 +17,7 @@
       }
 
 .hpimage {
-    /* background-image: url(./images/back.jpg); 8eafd3 */
+     background-image: url(./images/loginBg.jpg); 
     background-color: #8eafd3;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -749,6 +749,7 @@ li {
 .card-title {
     margin-left: 5px;
     margin-top: 8 px;
+    color: #000000;
 }
 
 
@@ -759,8 +760,8 @@ li {
 }
 
 .btn-def {
-    color: #000000;
-    background-color: #94bff77e;
+    color: #ffffff;
+    background-color: #2a52857e;
     padding: 10px 25px;
     text-align: center;
     font: 'Raleway', sans-serif;
@@ -788,15 +789,15 @@ li {
 }
 
 .btn-curved {
-    color: rgb(0, 0, 0);
-    background-color: #70acfc7e;
+    color: rgb(255, 255, 255);
+    background-color: #2a52857e;
     padding: 10px 40px;
     text-align: center;
     font: 'Raleway', sans-serif;
     font-size: 16px;
     transition-duration: 0.1s;
     border-radius: 5px;
-    border-color: #ffffff;
+    border-color: #34a9ec;
     
 }
 
@@ -1008,7 +1009,7 @@ li {
     
     border-radius: 10px;
     margin-top: 0%;
-    background-color: #70acfc7e;
+    background-color: #ffffffce;
     padding: 10px;
     color: #ffffff;
     justify-content: center;

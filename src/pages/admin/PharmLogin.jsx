@@ -50,9 +50,9 @@ export default function PharmLogin() {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container loginIn">
       {/* Buttons in corners */}
-      <a href="/" className="corner-button left">Home</a>
+      <a href="/" className="btn-def corner-button left">Home</a>
       <a href="/Pharmacist" className="corner-button right">Register as a Pharmacist</a>
 
       <div className="login-card">
