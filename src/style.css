@@ -1010,7 +1010,6 @@ li {
     border-radius: 10px;
     margin-top: 0%;
     background-color: #ffffffce;
-    padding: 10px;
     color: #ffffff;
     justify-content: center;
 
@@ -1173,6 +1172,16 @@ li {
     color: #e94560;
     transform: scale(1.05);
   }
+
+  .navbar-nav .nav-link {
+    color: white !important; /* Change color to white */
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #000000 !important; /* Change color on hover */
+  }
+  
   
   /* Right-Side Icons */
   .nav-icons {
@@ -1184,7 +1193,7 @@ li {
   .icon {
     font-size: 20px;
     cursor: pointer;
-    color: #8eafd3;
+    color: #ffffff;
   }
   
   .logout-btn {

@@ -39,7 +39,11 @@ export default function SidenavAd() {
   return (
     <div>
       {/* Top Navbar */}
-      <Navbar className="top-navbar">
+      <Navbar
+                    expand="lg"
+                    className="navbar navbar-expand-lg   ftco_navbar ftco-navbar-light"
+                    style={{backgroundColor:'#2a52857e',color:'white'}}
+               >
         <Container>
           {/* Logo */}
           <Navbar.Brand href="/Admindashboard">

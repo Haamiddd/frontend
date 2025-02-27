@@ -81,7 +81,7 @@ export default function ProfileAd() {
         <div className="col-md-12">
           <h2 className="text-center">Pharmacy Profile</h2>
           
-          <section style={{ backgroundColor: "#e0ffe0", borderRadius: "16px" }}>
+          <section>
             <MDBContainer className="py-5" style={{ fontSize: '20px', borderRadius: "16px" }}>
               <MDBRow>
                 <MDBCol lg="4">
