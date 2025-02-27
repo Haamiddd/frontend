@@ -53,7 +53,7 @@ export default function Register() {
      };
 
      return (
-          <div className="container-fluid d-flex flex-column min-vh-100">
+          <div className="loginIn container-fluid d-flex flex-column min-vh-100">
                <div className="d-flex justify-content-between p-3">
                     <a href="/" className="btn btn-def" style={{ fontSize: "20px", textDecoration: "none" }}>Home</a>
                     <a href="/login" className="btn btn-def" style={{ fontSize: "20px", textDecoration: "none" }}>Login</a>

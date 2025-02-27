@@ -52,8 +52,8 @@ export default function Login() {
      };
 
      return (
-          <div className="container-fluid d-flex flex-column min-vh-100">
-               <div className="d-flex justify-content-between p-3">
+          <div className="container-fluid loginIn d-flex flex-column min-vh-100">
+               <div className="d-flex justify-content-between py-3">
                     <a href="/" className="btn btn-def" style={{ fontSize: "20px", textDecoration: "none" }}>Home</a>
                     <a href="/register" className="btn btn-def" style={{ fontSize: "20px", textDecoration: "none" }}>Register</a>
                </div>
