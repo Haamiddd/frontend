@@ -3,16 +3,19 @@ import SidenavAd from "../../components/admin/SidenavAd";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ViewProductModal from "../../components/modals/ViewProductModal";
-import { BsFillHandThumbsUpFill, BsFillTrashFill } from 'react-icons/bs'
-import Swal from 'sweetalert2';
+import { BsFillHandThumbsUpFill, BsFillTrashFill } from "react-icons/bs";
+import Swal from "sweetalert2";
 import GenerOrderReport from "../../components/modals/GenerOrderReport";
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function OrderManagement() {
   const [orders, setOrders] = useState([]);
   const [totalSales, setTotalSales] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [chartData, setChartData] = useState(null);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -49,12 +52,12 @@ export default function OrderManagement() {
 
   const handleDeleteOrder = (orderId) => {
     Swal.fire({
-      title: 'Delete Order',
-      text: 'Are you sure to delete the order?',
-      icon: 'warning',
+      title: "Delete Order",
+      text: "Are you sure to delete the order?",
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'No',
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
         axios
@@ -65,9 +68,9 @@ export default function OrderManagement() {
             );
 
             Swal.fire({
-              title: 'Success',
-              text: 'Order Deleted Successfully!',
-              icon: 'success',
+              title: "Success",
+              text: "Order Deleted Successfully!",
+              icon: "success",
             }).then(() => {
               window.location.reload();
             });
@@ -116,32 +119,57 @@ export default function OrderManagement() {
     });
   };
 
-  const filteredOrder = orders.filter((or) =>
-    or.orderDate.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
+  const filteredOrder = orders.filter((or) => {
+    const orderDate = new Date(or.orderDate);
+    const matchesDateRange =
+      (!startDate || orderDate >= startDate) &&
+      (!endDate || orderDate <= endDate);
+    return matchesDateRange;
+  });
 
   return (
     <div>
       <SidenavAd />
-      
+
       <div className="row px-5">
-        
         <div className="col-md-12">
           <h2 className="text-center">Order Dashboard</h2>
           <br />
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div className="text-center" style={{ width: '50%' }}>
-              <input
-                type="text"
-                placeholder="Search by date"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className="text-center" style={{ width: "50%" }}>
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                selectsStart
+                startDate={startDate}
+                endDate={endDate}
+                placeholderText="Start Date"
+                className="form-control me-2"
+              />
+              <DatePicker
+                selected={endDate}
+                onChange={(date) => setEndDate(date)}
+                selectsEnd
+                startDate={startDate}
+                endDate={endDate}
+                placeholderText="End Date"
+                className="form-control"
               />
             </div>
-            <div><GenerOrderReport /></div>
-            <div className="text-center" style={{background:"black", color:"white", padding:"12px", borderRadius:"5px", paddingBottom:"0px"}}>
-              <h4 style={{ fontWeight:"bold"}}>Total Sales: {totalSales}</h4>
+            <div>
+              <GenerOrderReport />
+            </div>
+            <div
+              className="text-center"
+              style={{
+                background: "black",
+                color: "white",
+                padding: "12px",
+                borderRadius: "5px",
+                paddingBottom: "0px",
+              }}
+            >
+              <h4 style={{ fontWeight: "bold" }}>Total Sales: {totalSales}</h4>
             </div>
           </div>
           <br />
@@ -168,16 +196,20 @@ export default function OrderManagement() {
                   <td>{or.contactNumber}</td>
                   <td>{or.patientAddress}</td>
                   <td>{or.paymentMethod}</td>
-                  <td><span style={{
-                    backgroundColor: or.orderStatus === "Pending" ? "red" : "green",
-                    color: "white",
-                    borderRadius: 6,
-                    fontWeight: 'bold',
-                    padding: 6,
-                    textAlign: "center",
-                  }}
-                  >
-                    {or.orderStatus}</span>
+                  <td>
+                    <span
+                      style={{
+                        backgroundColor:
+                          or.orderStatus === "Pending" ? "red" : "green",
+                        color: "white",
+                        borderRadius: 6,
+                        fontWeight: "bold",
+                        padding: 6,
+                        textAlign: "center",
+                      }}
+                    >
+                      {or.orderStatus}
+                    </span>
                   </td>
                   <td>
                     <ViewProductModal products={or.products} />
