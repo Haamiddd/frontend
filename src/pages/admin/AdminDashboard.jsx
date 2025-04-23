@@ -138,7 +138,10 @@ export default function AdminDashboard() {
               </div>
 
             </div>
-            <div className="charts">
+            <div>
+              <h1>Income report </h1>
+            </div>
+            {/* <div className="charts">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   width={500}
@@ -160,7 +163,7 @@ export default function AdminDashboard() {
                   <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
                 </BarChart>
               </ResponsiveContainer>
-
+                 
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                   width={500}
@@ -182,7 +185,8 @@ export default function AdminDashboard() {
                   <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                 </LineChart>
               </ResponsiveContainer>
-            </div>
+            </div> */}
+            
           </main>
         </div>
       </div>

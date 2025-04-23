@@ -76,7 +76,8 @@ export default function Login() {
                                         </div>
                                         <a href="#">Forgot Password</a>
                                         <br />
-                                        <a href="/Pharmlogin">Login as a Pharmacist</a>
+                                        <a href="/Pharmlogin">Login as a Pharmacist</a> <br />
+                                        <a href="/Adminlogin">Login as a Super Admin</a>
                                         <br /><br />
                                         <input type="submit" value="Login" className="btn btn-curved w-100" />
                                    </form>

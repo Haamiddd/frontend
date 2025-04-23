@@ -60,35 +60,15 @@ export default function AdminLogin() {
      };
 
   return (
-       <div className='loginIn'>
-            <div className="container-fluid">
-                 <div className="row bg-image login-image">
-                      <div className="row bg-trans-yellow">
-                           <div className="col-md-8">
-                                <div className="pic-body">
-                                     <br />
-                                     <br />
-                                     {/* <a href="/" style={{ fontSize: "30px", textDecoration: "none" }}>Back to home</a> */}
-                                     <br />
-                                     <br />
-                                     <br />
-                                     <br />
-                                     <br />
-                                     <br />
-                                     <div className="topic">
-                                          Simplify your <span className="blue">life</span>
-                                     </div>
-                                </div>
-                           </div>
-                           <div className="col-md-4 login-sec">
-                                <div style={{ height: '11vh' }}> </div>
+       <div className='container-fluid loginIn d-flex flex-column min-vh-100'>
+            <div className="d-flex justify-content-center align-items-center flex-grow-1">
+                 <div className="col-md-4">
+                      
+                                
                                 <div className="card login-card">
                                      <span className="card-body">
-                                          <br />
-                                          <br />
-                                          <span className="card-title">Admin Login</span>
-                                          <br />
-                                          <br />
+                                          
+                                          <span className="card-title" style={{color:'black'}}>Super Admin Login</span>
                                           <span className="card-text">
                                                <form className="loginForm" onSubmit={handleLogin}>
                                                     <div className="form group">
@@ -111,7 +91,8 @@ export default function AdminLogin() {
                                                               onChange={(e) => setPassword(e.target.value)}
                                                          />
                                                     </div>
-                                                    <a href="">Forgot Password</a>
+                                                    <a href="">Forgot Password</a> <br />
+                                                    <a href="/">home</a>
                                                     <br />
                                                     <br />
                                                     <input
@@ -127,7 +108,5 @@ export default function AdminLogin() {
                            </div>
                       </div>
                  </div>
-            </div>
-       </div>
   )
 }
