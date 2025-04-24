@@ -22,7 +22,9 @@ import OrderManagement from './pages/admin/OrderManagement';
 import PrescriptionManagement from './pages/admin/PrescriptionManagement';
 import Profile from './pages/user/Profile';
 import Checkout from './pages/user/Checkout';
-import superAdminOrders from'./pages/admin/SuperAdminOrders'
+import superAdminOrders from'./pages/admin/SuperAdminOrders';
+import DispatchedOrdersReport from'./pages/admin/DispatchedOrdersReport';
+import UserPrescription from "./pages/user/UserPrescription"
 
 
 function App() {
@@ -53,6 +55,8 @@ function App() {
           <Route path="/Profile" element={<Profile />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/superAdminOrders" element={<superAdminOrders/>} />
+          <Route path="/DispatchedOrdersReport" element={<DispatchedOrdersReport/>} />
+          <Route path="/UserPrescription" element={<UserPrescription/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -30,7 +30,10 @@ export default function Login() {
                if (response.status === 200) {
                     const data = await response.json();
                     const userId = data._id;
+                    const username = data.name;
+                  
                     localStorage.setItem('userId', userId);
+                    localStorage.setItem('username', username);
 
                     Swal.fire({
                          icon: 'success',

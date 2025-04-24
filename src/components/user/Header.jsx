@@ -118,6 +118,15 @@ export default function Header() {
                                    </li>
 
                               </Navbar.Collapse>
+
+                              <Navbar.Collapse id="navbar-dark-example">
+                                   <li className="nav-item">
+                                        <a href="/UserPrescription" className="nav-link">
+                                             Prescription
+                                        </a>
+                                   </li>
+
+                              </Navbar.Collapse>
 {/* 
                               <Navbar.Collapse id="navbar-dark-example">
                                    <li className="nav-item">

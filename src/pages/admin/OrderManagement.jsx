@@ -136,7 +136,7 @@ export default function OrderManagement() {
           <h2 className="text-center">Order Dashboard</h2>
           <br />
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div className="text-center" style={{ width: "50%" }}>
+            <div className="text-center" style={{ width: "50%"}}>
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
@@ -144,7 +144,8 @@ export default function OrderManagement() {
                 startDate={startDate}
                 endDate={endDate}
                 placeholderText="Start Date"
-                className="form-control me-2"
+                className="form-control me-2 pr-5"
+               
               />
               <DatePicker
                 selected={endDate}
