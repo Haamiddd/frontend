@@ -90,7 +90,6 @@ export default function AdminDashboard() {
 
             {/* Income Report Section */}
             <div className="mt-4">
-              <h5 className="mb-3">Income Report</h5>
               <DispatchedOrdersReport pharmacyId={pharmacyId} />
             </div>
 
