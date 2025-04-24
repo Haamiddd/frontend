@@ -99,6 +99,7 @@ export default function PrescriptionManagement() {
                 <th className="text-center" scope="col">
                   Prescription
                 </th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody className="tbl-body">
@@ -120,6 +121,7 @@ export default function PrescriptionManagement() {
                       <BsFillTrashFill/>
                     </button> */}
                   </td>
+                  <td>{pr.status}</td>
                 </tr>
               ))}
             </tbody>
