@@ -120,7 +120,7 @@ export default function SuperAdminDashboard() {
               </div> */}
 
             </div>
-            <div className="charts">
+            {/* <div className="charts">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   width={500}
@@ -164,7 +164,7 @@ export default function SuperAdminDashboard() {
                   <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
                 </LineChart>
               </ResponsiveContainer>
-            </div>
+            </div> */}
           </main>
         </div>
       </div>

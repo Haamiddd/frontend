@@ -78,9 +78,9 @@ export default function SidenavSuperAd() {
                                    <a href="/Userdashboard" className="nav-item nav-link dash-link">
                                         <CgProfile /> User Dashboard
                                    </a>
-                                   <a href="/superAdminOrders" className="nav-item nav-link dash-link">
+                                   {/* <a href="/superAdminOrders" className="nav-item nav-link dash-link">
                                         <MdLocalPharmacy />Orders
-                                   </a>
+                                   </a> */}
                               </div>
                          </div>
                     </Container>

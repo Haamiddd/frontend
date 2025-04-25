@@ -92,9 +92,9 @@ export default function PrescriptionManagement() {
               <tr>
                 {/* <th scope="col">Patient Name</th>
                 <th scope="col">Age</th> */}
-                <th scope="col">Contact</th>
-                <th scope="col">Address</th>
-                <th scope="col">Gender</th>
+               {/*  <th scope="col">Contact</th> */}
+                {/* <th scope="col">Address</th> */}
+                {/* <th scope="col">Gender</th> */}
                 <th scope="col">Allergy</th>
                 <th className="text-center" scope="col">
                   Prescription
@@ -107,9 +107,9 @@ export default function PrescriptionManagement() {
                 <tr key={pr._id}>
                   {/* <td>{pr.patientname}</td>
                   <td>{pr.age}</td> */}
-                  <td>{pr.yourphone}</td>
-                  <td>{pr.address}</td>
-                  <td>{pr.gender}</td>
+                  {/* <td>{pr.yourphone}</td> */}
+                 {/*  <td>{pr.address}</td> */}
+                  {/* <td>{pr.gender}</td> */}
                   <td>{pr.allergy}</td>
                   <td className="text-center">
                     <PrescriptionModal pic={pr.pic}/>
