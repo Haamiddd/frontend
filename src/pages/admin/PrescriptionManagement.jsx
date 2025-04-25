@@ -68,7 +68,7 @@ export default function PrescriptionManagement() {
 
   const handleStatusChange = (prescriptionId) => {
     axios
-      .put(`http://localhost:3000/api/prescription/${prescriptionId}/status`, {
+      .put(`http://localhost:3000/api/prescription/prescription/${prescriptionId}`, {
         status: "Dispatched",
       })
       .then(() => {
